@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Vision — WhatsApp-style Chat</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <div class="top-left">
+        <div class="avatar-sm">V</div>
+        <div class="title">
+          <div class="name">Vision</div>
+          <div class="sub">Your AI Assistant</div>
+        </div>
+      </div>
+      <div class="top-right">
+        <button id="clearBtn" class="icon-btn">Clear</button>
+      </div>
+    </header>
+
+    <main class="chat-wrap">
+      <div id="messages" class="messages" aria-live="polite"></div>
+    </main>
+
+    <form id="composer" class="composer" autocomplete="off">
+      <button type="button" id="micBtn" class="mic">🎙</button>
+      <textarea id="input" placeholder="Type a message" rows="1"></textarea>
+      <button id="sendBtn" type="submit" class="send">Send</button>
+    </form>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
