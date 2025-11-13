@@ -1,0 +1,114 @@
+/* WhatsApp-style clean dark theme for Vision */
+
+/* reset */
+ *{box-sizing:border-box;margin:0;padding:0}
+html,body,#app{height:100%}
+body{
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+  background: linear-gradient(180deg,#071021 0%, #041026 100%);
+  color:#e6eef8;
+  height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+/* app container */
+.app{
+  width:100%;
+  max-width:820px;
+  height:92vh;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border-radius:12px;
+  box-shadow: 0 12px 40px rgba(2,6,23,0.7);
+  display:flex;
+  flex-direction:column;
+  overflow:hidden;
+  border:1px solid rgba(255,255,255,0.03);
+}
+
+/* topbar */
+.topbar{
+  height:72px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:12px 16px;
+  border-bottom:1px solid rgba(255,255,255,0.02);
+  background: linear-gradient(180deg, rgba(10,14,22,0.6), rgba(10,14,22,0.4));
+}
+.top-left{display:flex;align-items:center;gap:12px}
+.avatar-sm{
+  width:48px;height:48px;border-radius:50%;background:linear-gradient(90deg,#06b6d4,#7c3aed);display:flex;align-items:center;justify-content:center;font-weight:700;color:white}
+.title .name{font-weight:700}
+.title .sub{font-size:12px;opacity:0.7;margin-top:2px}
+.icon-btn{background:transparent;border:1px solid rgba(255,255,255,0.04);padding:8px 10px;border-radius:8px;color:inherit;cursor:pointer}
+
+/* messages area */
+.chat-wrap{flex:1;display:flex;flex-direction:column;overflow:hidden}
+.messages{
+  padding:18px;flex:1;overflow:auto;display:flex;flex-direction:column;gap:12px;
+  background-image: radial-gradient(circle at 20% 10%, rgba(124,58,237,0.02), transparent 10%),
+                    radial-gradient(circle at 80% 90%, rgba(6,182,212,0.02), transparent 10%);
+}
+
+/* message bubble base */
+.msg{
+  max-width:78%;
+  padding:10px 12px;
+  border-radius:12px;
+  line-height:1.35;
+  word-wrap:break-word;
+  white-space:pre-wrap;
+  box-shadow: 0 6px 18px rgba(2,6,23,0.5);
+}
+
+/* user (right) */
+.msg.user{
+  align-self:flex-end;
+  background: linear-gradient(90deg,#10b981,#047857);
+  color:white;
+  border-radius:14px 14px 4px 14px;
+}
+
+/* assistant (left) */
+.msg.assistant{
+  align-self:flex-start;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  color:#e6eef8;
+  border:1px solid rgba(124,58,237,0.06);
+  border-radius:14px 14px 14px 6px;
+}
+
+/* meta row */
+.meta{font-size:12px;opacity:0.7;margin-bottom:6px}
+
+/* typing indicator bubble */
+.typing{
+  display:flex;gap:6px;align-items:center;padding:10px 12px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.005));border:1px solid rgba(255,255,255,0.02);
+}
+.dot{width:8px;height:8px;border-radius:50%;background:linear-gradient(90deg,#06b6d4,#7c3aed);animation:bounce 1s infinite}
+.dot:nth-child(2){animation-delay:.15s}
+.dot:nth-child(3){animation-delay:.3s}
+@keyframes bounce{0%{transform:translateY(0)}50%{transform:translateY(-6px)}100%{transform:translateY(0)}}
+
+/* composer */
+.composer{
+  display:flex;align-items:flex-end;gap:10px;padding:12px;border-top:1px solid rgba(255,255,255,0.02);
+  background: linear-gradient(180deg, rgba(2,6,23,0.6), rgba(2,6,23,0.4));
+}
+.mic{background:transparent;border:none;color:inherit;font-size:18px;padding:8px;cursor:pointer}
+textarea{
+  flex:1;min-height:44px;max-height:140px;padding:10px 12px;border-radius:10px;border:1px solid rgba(255,255,255,0.03);background:transparent;color:inherit;resize:none;font-size:14px;outline:none;
+}
+.send{background:linear-gradient(90deg,#06b6d4,#7c3aed);border:none;color:white;padding:10px 14px;border-radius:10px;cursor:pointer}
+
+/* scroll bar small */
+.messages::-webkit-scrollbar{width:8px}
+.messages::-webkit-scrollbar-thumb{background:rgba(255,255,255,0.04);border-radius:8px}
+
+/* responsive */
+@media (max-width:600px){
+  .app{height:100vh;border-radius:0}
+  .messages{padding:12px}
+} 
